@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,600|Space+Mono:400,400i,700&display=swap");
+body {
+    font-family: Sans-serif;
+    margin: 0;
+    font-size: 3vh;/*2.7em; /* For presentation */
+    overflow: hidden;
+    background-color: #050505;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Rajdhani, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#3d-graph {
+    width: 70%;
+}
+
+a {
+    color: #28C2D1;
+}
+
+.sidebar {
+    width: 30%;
+    top: 0px;
+    right: 0px;
+    padding: 0;
+    color: #E1DFDD;
+    background-color: #171717;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1#sidebar-title {
+    font-family:Space Mono,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+    font-weight:700;
+    font-size:1.5em;
+    padding: 0.33em;
+    margin: 0;
+}
+
+#sidebar-content {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+#sidebar-variable {
+
+}
+
+h2.topic-title{
+    font-size: 1.3em;
+    color: #171717;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.full-story {
+    bottom: 0;
+}
+
+.topic-text, .full-story, .intro{
+    padding: 0.5em;
+    margin: 0;
+}
+
+.quote {
+    display: block;
+    font-style: italic;
+}
+
+.who {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+img.interpreter {
+    width: 3em;
+    border-radius: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: .5em;
+    margin-top: .5em;
+}
+
+#hero-image {
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+
+#cde-logo {
+    display: block;
+    position:fixed;
+    bottom: 0.5em;
+    left: 0.5em;
+    width: 200px;
+}
