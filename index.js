@@ -1,5 +1,6 @@
 let Graph;
-let topicsText;
+let topicsText =  Array();
+const graphFont = "sans-serif"; //was: Rajdhani
 const vr = false;
 const colors = ["#D34581","#28C2D1","#56A84F","#9953C0","#2B88D7","#F7B548","#FAF9F8"]
 if(vr)
@@ -48,7 +49,7 @@ window.onload = function(){
 				sprite.center.y = -3;
 			else
 				sprite.center.y = -2;
-			sprite.fontFace = "Rajdhani";
+			sprite.fontFace = graphFont;
 			sprite.color = "#CCC";
 			sprite.textHeight = 3;
 		//	sprite.material.depthWrite = false;
@@ -78,41 +79,23 @@ window.onload = function(){
 		/* Set camera position: */
 		//a = new THREE.Vector3(0,0,0);
 		//Graph.cameraPosition({x: -200, y: -600, z: -200}, a);
-		changeClassAttribute("scene-tooltip", "fontFamily", "Rajdhani");
+		//changeClassAttribute("scene-tooltip", "fontFamily", "Rajdhani");
+		changeClassAttribute("scene-tooltip", "fontFamily", graphFont);
 		changeClassAttribute("scene-tooltip", "backgroundColor", "#171717");
 		changeClassAttribute("scene-tooltip", "paddingLeft", "4px");
 		changeClassAttribute("scene-tooltip", "paddingRight", "4px");
 		changeClassAttribute("scene-tooltip", "textAlign", "center");
 	});
-	fetch('topics-text.tsv')
-	.then(response => response.text())
-	.then(data => {
-		// Do something with your data
-		topicsText = processTSV(data);
-	});
 
-	window.onresize = (function(){
-		location.reload();
+	d3.csv("topics-text.csv", function(data) {
+		for (var i = 0; i < data.length; i++) {
+			topicsText[i] = {topic: data[i].topic, text: data[i].text, who: data[i].who};
+			console.log(data[i]);
+		}
+		console.log(topicsText);
 	});
 
 };
-
-function processTSV(allText) {
-    var allTextLines = allText.split(/\r\n|\n/);
-    var headers = allTextLines[0].split('\t');
-    var lines = [];
-    for (var i=1; i<allTextLines.length; i++) {
-        var data = allTextLines[i].split('\t');
-        if (data.length == headers.length) {
-            var tarr = [];
-            for (var j=0; j<headers.length; j++) {
-                tarr[headers[j]] = data[j];
-            }
-            lines.push(tarr);
-        }
-    }
-	return(lines);
-}
 
 function fetchTopic(topicsText,topic) {
 	for(var i=0;i<topicsText.length;i++) {
