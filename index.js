@@ -1,8 +1,16 @@
+/*--- CUSTOMIZATION: ---*/
+const graphFont = "sans-serif"; //it was: Rajdhani
+const graphBGColor = "#050505";
+const fontColor = "#CCC";
+const groupColors = ["#D34581","#28C2D1","#56A84F","#9953C0","#2B88D7","#F7B548","#FAF9F8"];
+// Sidebar:
+const sbBGColor = "#171717";
+const linkColor = groupColors[1];
+
+
 let Graph;
 let topicsText =  Array();
-const graphFont = "sans-serif"; //was: Rajdhani
 const vr = false;
-const colors = ["#D34581","#28C2D1","#56A84F","#9953C0","#2B88D7","#F7B548","#FAF9F8"]
 if(vr)
 {
 	Graph = ForceGraphVR()
@@ -13,6 +21,11 @@ else{
 	(document.getElementById('3d-graph'))
 }
 window.onload = function(){
+	document.querySelector("body").style.backgroundColor = graphBGColor;
+	document.querySelector("a").style.color = linkColor;
+	document.querySelector(".sidebar").style.backgroundColor = sbBGColor;
+	document.querySelector(".sidebar").style.color = fontColor;
+
 	fetch('topics-graph-names.json')
 	.then(response => response.text())
 	.then(data => {
@@ -20,10 +33,10 @@ window.onload = function(){
 		gData = JSON.parse(data);
 		Graph.cooldownTicks(200)
 		.width(window.innerWidth*0.7)
-		.backgroundColor("#050505")
+		.backgroundColor(graphBGColor)
 		.nodeLabel('id')
 		.nodeColor( node => {
-			return colors[node.group];
+			return groupColors[node.group];
 		})
 		.nodeVal( node => {
 			if(node.uberTopic == "1")
@@ -38,7 +51,7 @@ window.onload = function(){
 		.linkWidth(0.5)
 		.linkColor( link => {
 			const colorIndex = getGroup(link.target, gData.nodes);
-			return(colors[colorIndex]);
+			return(groupColors[colorIndex]);
 		})
 		//.jsonUrl('../topics-graph-names.json');
 		.graphData(gData)
@@ -50,14 +63,14 @@ window.onload = function(){
 			else
 				sprite.center.y = -2;
 			sprite.fontFace = graphFont;
-			sprite.color = "#CCC";
+			sprite.color = fontColor;
 			sprite.textHeight = 3;
 		//	sprite.material.depthWrite = false;
 			return sprite;
 		})
 		.onNodeClick(node => {
 			let groupName = getGroupName(node.group, gData.nodes);
-			let color = colors[node.group];
+			let color = groupColors[node.group];
 			document.querySelector("#sidebar-variable").innerHTML = "";
 			var title = document.createElement('h2');
 			title.classList.add("topic-title");
@@ -79,9 +92,9 @@ window.onload = function(){
 		/* Set camera position: */
 		//a = new THREE.Vector3(0,0,0);
 		//Graph.cameraPosition({x: -200, y: -600, z: -200}, a);
-		//changeClassAttribute("scene-tooltip", "fontFamily", "Rajdhani");
 		changeClassAttribute("scene-tooltip", "fontFamily", graphFont);
-		changeClassAttribute("scene-tooltip", "backgroundColor", "#171717");
+		changeClassAttribute("scene-tooltip", "backgroundColor", graphBGColor);
+		changeClassAttribute("scene-tooltip", "color", fontColor);
 		changeClassAttribute("scene-tooltip", "paddingLeft", "4px");
 		changeClassAttribute("scene-tooltip", "paddingRight", "4px");
 		changeClassAttribute("scene-tooltip", "textAlign", "center");
