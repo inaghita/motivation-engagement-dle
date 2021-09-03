@@ -1,9 +1,12 @@
 /*--- CUSTOMIZATION: ---*/
+// Graph:
 const graphFont = "sans-serif"; //it was: Rajdhani
 const graphBGColor = "#050505";
 const fontColor = "#CCC";
 const groupColors = ["#D34581","#28C2D1","#56A84F","#9953C0","#2B88D7","#F7B548","#FAF9F8"];
 // Sidebar:
+const titleFont = "monospace"
+const sbFont = graphFont;
 const sbBGColor = "#171717";
 const linkColor = groupColors[1];
 
@@ -25,6 +28,8 @@ window.onload = function(){
 	document.querySelector("a").style.color = linkColor;
 	document.querySelector(".sidebar").style.backgroundColor = sbBGColor;
 	document.querySelector(".sidebar").style.color = fontColor;
+	document.querySelector(".container").style.fontFamily = sbFont;
+	document.querySelector("h1#sidebar-title").style.fontFamily = titleFont;
 
 	fetch('topics-graph-names.json')
 	.then(response => response.text())
@@ -75,6 +80,7 @@ window.onload = function(){
 			var title = document.createElement('h2');
 			title.classList.add("topic-title");
 			title.style.backgroundColor = color;
+			title.style.color = sbBGColor;
 			title.innerHTML = groupName;
 			document.querySelector("#sidebar-variable").appendChild(title);
 			if(node.uberTopic==0) {
