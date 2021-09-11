@@ -1,13 +1,13 @@
 /*--- CUSTOMIZATION: ---*/
 // Graph:
 const graphFont = "sans-serif"; //it was: Rajdhani
-const graphBGColor = "#050505";
+const graphBGColor = "#283618";
 const fontColor = "#CCC";
-const groupColors = ["#D34581","#28C2D1","#56A84F","#9953C0","#2B88D7","#F7B548","#FAF9F8"];
+const groupColors = ["#588080","#DDA15E","#BC6C25","#588080","#606C38","#87807B","#FDEABB"];
 // Sidebar:
 const titleFont = "monospace"
 const sbFont = graphFont;
-const sbBGColor = "#171717";
+const sbBGColor = "#283618";
 const linkColor = groupColors[1];
 
 

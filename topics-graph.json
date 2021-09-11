@@ -4,7 +4,7 @@
 	{"name":"Engagement","group":2},
 	{"name":"Digital Learning Environment","group":3},
 	{"name":"Professors ","group":4},
-	{"name":"Time ","group":5},
+	{"name":"Time","group":5},
 	{"name":"Increased motivation","group":0},
 	{"name":"Increased intellectual stimulation","group":1},
 	{"name":"Ease of use","group":2},
@@ -13,7 +13,7 @@
 	{"name":"Student-intructor messaging tools","group":3},
 	{"name":"Group work tools","group":3},
 	{"name":"Spaces to connect","group":3},
-	{"name":"Dialogue ","group":1},
+	{"name":"Dialogue","group":1},
 	{"name":"Use of features","group":3},
 	{"name":"Real world problems","group":1},
 	{"name":"Habits of the mind","group":1}
@@ -47,8 +47,7 @@
 	{"source":16,"target":1,"value":2},
 	{"source":16,"target":2,"value":1},
 	{"source":16,"target":4,"value":1},
-	{"source":17,"target":1,"value":2}
-	]
-}	{"source":17,"target":2,"value":1}
-	]
+	{"source":17,"target":1,"value":2},
+	{"source":17,"target":2,"value":1}
+	]	
 }
