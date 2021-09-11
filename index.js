@@ -94,7 +94,7 @@ window.onload = function(){
 			text.innerHTML = fetchTopic(topicsText,node.id);
 			document.querySelector("#sidebar-variable").appendChild(text);
 		});
-		Graph.cameraPosition({x:0,y:0,z:400})
+		Graph.cameraPosition({x:0,y:0,z:250})
 		/* Set camera position: */
 		//a = new THREE.Vector3(0,0,0);
 		//Graph.cameraPosition({x: -200, y: -600, z: -200}, a);
@@ -120,16 +120,17 @@ function fetchTopic(topicsText,topic) {
 	for(var i=0;i<topicsText.length;i++) {
 		if(topicsText[i]["topic"] == topic) {
 			if(topicsText[i]["who"] != "") {
-				var imgPath = topicsText[i]["who"].toLowerCase().replace(/\ /g, "-");
-				imgPath += ".jpg"
-				var result = '<span class="quote">"';
+				//var imgPath = topicsText[i]["who"].toLowerCase().replace(/\ /g, "-");
+				//imgPath += ".jpg"
+				var result = "";
 				result += topicsText[i]["text"];
-				result += '"</span>';
+				/*
 				result += '<img class="interpreter" src="/images/interpreters/';
 				result += imgPath + '"></img>';
 				result += '<span class="who">'; // quote dash, if required: &#8213;
 				result += topicsText[i]["who"];
 				result += "</span>";
+				*/
 				return(result);
 			}
 			else
