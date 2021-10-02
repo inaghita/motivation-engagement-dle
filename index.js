@@ -3,7 +3,7 @@
 const graphFont = "sans-serif"; //it was: Rajdhani
 const graphBGColor = "#283618";
 const fontColor = "#CCC";
-const groupColors = ["#588080","#DDA15E","#BC6C25","#588080","#606C38","#87807B","#FDEABB"];
+const groupColors = ["#588080","#DDA15E","#BC6C25","#34403A","#606C38","#87807B","#FDEABB"];
 // Sidebar:
 const titleFont = "monospace"
 const sbFont = graphFont;
